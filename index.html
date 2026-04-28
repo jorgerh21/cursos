@@ -1,89 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos de Programación</title>
+    <title>Cursos de Programación · Clases Personalizadas</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-
 <body>
     <div class="container">
         <div class="slide active">
-            <!-- Título principal -->
+            <span class="badge">Clases personalizadas virtuales</span>
             <h1>Cursos de Programación</h1>
             <p class="subtitulo">De principiante a experto en desarrollo, IA y herramientas modernas</p>
 
-            <!-- Curso 2: Crea tu propia página web (nuevo) -->
-            <div class="curso-seccion">
-                <h2>Crea tu propia página web</h2>
-                <div class="modulos">
-                    <a href="antigravity/index.html" class="tarjeta">
-                        <span class="numero">1</span>
-                        <span class="titulo">Antigravity</span>
-                        <span class="desc">Herramientas y el concepto Antigravity</span>
-                    </a>
-                    <a href="html-basico/index.html" class="tarjeta">
-                        <span class="numero">2</span>
-                        <span class="titulo">HTML Básico</span>
-                        <span class="desc">Estructura, etiquetas y primera página</span>
-                    </a>
-                    <a href="herramientas-ia/index.html" class="tarjeta">
-                        <span class="numero">1</span>
-                        <span class="titulo">Gemini &amp; ChatGPT</span>
-                        <span class="desc">Uso de IA para generar ideas y código</span>
-                    </a>
+            <div class="grid-cursos">
+                <!-- Curso 1: Básico Web -->
+                <div class="curso-wrapper">
+                    <div class="tarjeta-curso" data-curso="web-basico">
+                        <span class="curso-numero">01</span>
+                        <h3>Crea tu propia página web</h3>
+                    </div>
+                    <div class="modal-curso">
+                        <button class="modal-cerrar">&times;</button>
+                        <a href="antigravity/index.html" class="item-modal">1 · Antigravity</a>
+                        <a href="html-basico/index.html" class="item-modal">2 · HTML Básico</a>
+                        <a href="herramientas-ia/index.html" class="item-modal">3 · Gemini & ChatGPT</a>
+                    </div>
+                </div>
+
+                <!-- Curso 2: Lógica de Programación con Python -->
+                <div class="curso-wrapper">
+                    <div class="tarjeta-curso" data-curso="logica">
+                        <span class="curso-numero">02</span>
+                        <h3>Lógica de Programación con Python</h3>
+                    </div>
+                    <div class="modal-curso">
+                        <button class="modal-cerrar">&times;</button>
+                        <a href="logica-algoritmos/index.html" class="item-modal">1 · Lógica y Algoritmos</a>
+                        <a href="python-logica/index.html" class="item-modal">2 · Python Esencial</a>
+                        <a href="proyectos-logicos/index.html" class="item-modal">3 · Proyectos Lógicos</a>
+                    </div>
+                </div>
+
+                <!-- Curso 3: Desarrollo Web Full Stack -->
+                <div class="curso-wrapper">
+                    <div class="tarjeta-curso" data-curso="fullstack">
+                        <span class="curso-numero">03</span>
+                        <h3>Desarrollo Web Full Stack</h3>
+                    </div>
+                    <div class="modal-curso">
+                        <button class="modal-cerrar">&times;</button>
+                        <a href="mysql/index.html" class="item-modal">1 · MySQL</a>
+                        <a href="backend/index.html" class="item-modal">2 · Backend con Python</a>
+                        <a href="frontend/index.html" class="item-modal">3 · Frontend con React</a>
+                    </div>
+                </div>
+
+                <!-- Curso 4: Inteligencia Artificial -->
+                <div class="curso-wrapper">
+                    <div class="tarjeta-curso" data-curso="ia">
+                        <span class="curso-numero">04</span>
+                        <h3>Inteligencia Artificial</h3>
+                    </div>
+                    <div class="modal-curso">
+                        <button class="modal-cerrar">&times;</button>
+                        <a href="python-datos/index.html" class="item-modal">1 · Python para Datos</a>
+                        <a href="fundamentos-ia/index.html" class="item-modal">2 · Fundamentos de IA</a>
+                        <a href="machine-learning/index.html" class="item-modal">3 · Machine Learning</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Curso 2: Desarrollo Web Full Stack -->
-            <div class="curso-seccion">
-                <h2>Desarrollo Web Full Stack con Python</h2>
-                <div class="modulos">
-                    <a href="mysql/index.html" class="tarjeta">
-                        <span class="numero">1</span>
-                        <span class="titulo">MySQL</span>
-                        <span class="desc">Bases de datos relacionales, consultas, diseño</span>
-                    </a>
-                    <a href="backend/index.html" class="tarjeta">
-                        <span class="numero">2</span>
-                        <span class="titulo">Backend con Python</span>
-                        <span class="desc">APIs, Flask/Django, autenticación</span>
-                    </a>
-                    <a href="frontend/index.html" class="tarjeta">
-                        <span class="numero">3</span>
-                        <span class="titulo">Frontend con React</span>
-                        <span class="desc">Componentes, estado, rutas y hooks</span>
-                    </a>
-                </div>
-            </div>
-
-
-            <!-- Curso 3: Inteligencia Artificial -->
-            <div class="curso-seccion">
-                <h2>Inteligencia Artificial</h2>
-                <div class="modulos">
-                    <a href="python-datos/index.html" class="tarjeta">
-                        <span class="numero">1</span>
-                        <span class="titulo">Python para Datos</span>
-                        <span class="desc">NumPy, Pandas, manejo de datasets</span>
-                    </a>
-                    <a href="fundamentos-ia/index.html" class="tarjeta">
-                        <span class="numero">2</span>
-                        <span class="titulo">Fundamentos de IA</span>
-                        <span class="desc">Redes neuronales, perceptrón, aprendizaje</span>
-                    </a>
-                    <a href="machine-learning/index.html" class="tarjeta">
-                        <span class="numero">3</span>
-                        <span class="titulo">Machine Learning</span>
-                        <span class="desc">Regresión, clasificación y scikit‑learn</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Instructor y WhatsApp -->
-            <p class="instructor">Instructor: Jorge Rodriguez</p>
+            <p class="instructor">Instructor: <a href="https://sitioz.com/jorge" target="_blank" rel="noopener noreferrer">Jorge Rodriguez</a></p>
             <div class="boton-wa">
                 <a href="https://wa.me/573133275812?text=Hola%20Jorge%2C%20me%20interesan%20tus%20clases%20de%20programación"
                     target="_blank" class="btn-wa">
@@ -92,6 +80,25 @@
             </div>
         </div>
     </div>
-</body>
 
+    <script>
+        // Para móviles: toggle con clic en la tarjeta, cerrar con X
+        document.querySelectorAll('.tarjeta-curso').forEach(tarjeta => {
+            tarjeta.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A' || e.target.classList.contains('modal-cerrar')) return;
+                if (window.innerWidth <= 768) {
+                    const wrapper = this.closest('.curso-wrapper');
+                    wrapper.classList.toggle('modal-abierto');
+                }
+            });
+        });
+        document.querySelectorAll('.modal-cerrar').forEach(boton => {
+            boton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const wrapper = this.closest('.curso-wrapper');
+                wrapper.classList.remove('modal-abierto');
+            });
+        });
+    </script>
+</body>
 </html>
