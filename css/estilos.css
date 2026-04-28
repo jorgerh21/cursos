@@ -5,36 +5,31 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    /* 🚫 elimina cualquier barra */
+    overflow: hidden;                     /* 🚫 elimina cualquier barra */
     font-family: Arial, sans-serif;
     color: #ffffff;
-    background-image: url("../images/fondo.jpeg");
+    background-image: url("../images/fondo.jpeg"); /* ajusta la ruta si es necesario */
     backdrop-filter: blur(5px) brightness(50%);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-/* ===== CONTENEDOR PRINCIPAL (ocupa toda la pantalla) ===== */
+/* ===== CONTENEDOR PRINCIPAL ===== */
 .container {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* centrado vertical */
     align-items: center;
-    /* centrado horizontal */
-    padding: 5vh 5vw;
-    /* margen proporcional */
+    padding: 2vh 4vw;                     /* aún menos padding vertical */
 }
 
-/* ===== SLIDE SIEMPRE VISIBLE (sin .active pero se mantiene la clase) ===== */
+/* ===== SLIDE SIEMPRE VISIBLE ===== */
 .slide {
     display: flex;
     flex-direction: column;
@@ -45,39 +40,52 @@ body {
     text-align: center;
 }
 
-/* ===== TIPOGRAFÍA RESPONSIVE ===== */
+/* ===== TIPOGRAFÍA RESPONSIVE (reducida para ganar espacio) ===== */
 h1 {
-    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-size: clamp(1.4rem, 4vw, 2rem);
     color: #ff00c3;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em;
 }
 
-p {
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    margin: 0.3em 0;
+.subtitulo {
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
+    margin-bottom: 1vh;
+    opacity: 0.9;
 }
 
-/* ===== TARJETAS DE MÓDULOS ===== */
+h2 {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    color: #ff00c3;
+    margin: 0.5vh 0 0.3vh;
+}
+
+/* ===== SECCIÓN DE CURSO ===== */
+.curso-seccion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.2vh;
+}
+
+/* ===== TARJETAS DE MÓDULOS (más compactas) ===== */
 .modulos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 2vh 3vw;
-    margin-top: 2vh;
-    max-width: 90%;
+    gap: 1vh 2vw;
+    max-width: 95%;
 }
 
 .tarjeta {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
-    padding: clamp(15px, 3vh, 30px) clamp(10px, 2vw, 25px);
-    width: clamp(150px, 25vw, 220px);
-    /* se adapta al ancho de pantalla */
-    max-height: 35vh;
-    /* evita que una tarjeta se desborde */
+    border-radius: 10px;
+    padding: clamp(6px, 1.5vh, 12px) clamp(6px, 1.5vw, 14px);
+    width: clamp(110px, 18vw, 160px);
+    max-height: 28vh;
     text-decoration: none;
     color: #ffffff;
     transition: all 0.3s ease;
@@ -96,61 +104,44 @@ p {
 }
 
 .tarjeta .numero {
-    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-size: clamp(1.5rem, 4.5vw, 2.2rem);
     font-weight: 800;
     color: #d49afe;
     line-height: 1;
 }
 
 .tarjeta .titulo {
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-size: clamp(0.7rem, 1.8vw, 0.95rem);
     font-weight: bold;
-    margin: 0.3em 0;
+    margin: 0.1em 0;
     color: #ffffff;
 }
 
 .tarjeta .desc {
-    font-size: clamp(0.7rem, 1.5vw, 1rem);
+    font-size: clamp(0.55rem, 1.2vw, 0.7rem);
     opacity: 0.8;
 }
 
-/* ===== FIRMA DEL INSTRUCTOR ===== */
-.slide>p:last-child {
+/* ===== INSTRUCTOR ===== */
+.instructor {
     color: #d49afe;
-    margin-top: 2vh;
-    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    margin-top: 1.5vh;
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
+    font-weight: bold;
 }
 
-/* ===== ELIMINAR ESTILOS NO NECESARIOS EN EL ÍNDICE ===== */
-.nav,
-.modal,
-pre,
-ul {
-    /* se heredan del original pero no se usan aquí, los mantenemos por si acaso */
-    display: none;
-}
-
-h2 {
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-    color: #ff00c3;
-    margin: 0.5em 0 0.3em;
-}
-
-.curso-seccion {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* ===== BOTÓN WHATSAPP ===== */
+.boton-wa {
+    margin-top: 1vh;
 }
 
 .btn-wa {
-    padding: 10px 25px;
+    padding: 6px 18px;
     background-color: #25D366;
-    /* verde WhatsApp */
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    font-size: clamp(0.7rem, 1.6vw, 0.9rem);
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.3s ease;
@@ -159,5 +150,9 @@ h2 {
 
 .btn-wa:hover {
     background-color: #1da851;
-    /* verde más oscuro al pasar el mouse */
+}
+
+/* ===== OCULTAR ELEMENTOS NO USADOS ===== */
+.nav, .modal, pre, ul {
+    display: none;
 }
