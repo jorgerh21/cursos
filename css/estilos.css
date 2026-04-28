@@ -142,3 +142,22 @@ h2 {
     flex-direction: column;
     align-items: center;
 }
+
+.btn-wa {
+    padding: 10px 25px;
+    background-color: #25D366;
+    /* verde WhatsApp */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-wa:hover {
+    background-color: #1da851;
+    /* verde más oscuro al pasar el mouse */
+}
