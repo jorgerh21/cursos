@@ -4,192 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso de Programación con IA | Talento Tech</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: url('images/fondo.jpg') no-repeat center center fixed;
-            background-size: cover;
-            background-color: #0a0a20;
-            /* fallback oscuro */
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-        }
-
-        /* Overlay semitransparente para resaltar el contenido */
-        .overlay {
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 10, 40, 0.75);
-            backdrop-filter: blur(8px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .contenedor-curso {
-            width: 85%;
-            max-width: 1000px;
-            background: rgba(255, 255, 255, 0.07);
-            border-radius: 30px;
-            padding: 3rem 2.5rem;
-            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(212, 154, 254, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            text-align: center;
-            animation: fadeIn 1s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .titulo {
-            font-size: 2.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ff00c3, #d49afe);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.5px;
-        }
-
-        .subtitulo {
-            font-size: 1.3rem;
-            font-weight: 300;
-            color: #e0e0ff;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .modulos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.8rem;
-            margin-top: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .tarjeta {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            padding: 2rem 1rem;
-            transition: all 0.35s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-decoration: none;
-            color: #fff;
-            display: block;
-        }
-
-        .tarjeta:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.15);
-            border-color: #d49afe;
-            box-shadow: 0 15px 30px rgba(212, 154, 254, 0.25);
-        }
-
-        .tarjeta-numero {
-            font-size: 2.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ff00c3, #d49afe);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.2rem;
-        }
-
-        .tarjeta-titulo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 0.6rem;
-            color: #fff;
-        }
-
-        .tarjeta-desc {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            color: #d0d0ff;
-        }
-
-        .autor {
-            margin-top: 2rem;
-            color: #d49afe;
-            font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-        }
-
-        /* Ajuste para móvil */
-        @media (max-width: 576px) {
-            .contenedor-curso {
-                padding: 2rem 1.5rem;
-            }
-
-            .titulo {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <title>Cursos de Programación</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <div class="overlay">
-        <div class="contenedor-curso">
-            <h1 class="titulo">Programación con Inteligencia Artificial</h1>
-            <p class="subtitulo">Un viaje desde los fundamentos de Python hasta tus primeros modelos de Machine Learning
-            </p>
+    <div class="container">
+        <div class="slide active">
 
-            <div class="modulos">
-                <!-- Módulo 1 -->
-                <a href="modulo1/index.html" class="tarjeta">
-                    <div class="tarjeta-numero">1</div>
-                    <div class="tarjeta-titulo">Python Esencial</div>
-                    <div class="tarjeta-desc">Variables, bucles, funciones y lógica de programación</div>
-                </a>
-                <!-- Módulo 2 -->
-                <a href="modulo2/index.html" class="tarjeta">
-                    <div class="tarjeta-numero">2</div>
-                    <div class="tarjeta-titulo">Datos y Algoritmos</div>
-                    <div class="tarjeta-desc">Listas, diccionarios, algoritmos básicos y complejidad</div>
-                </a>
-                <!-- Módulo 3 -->
-                <a href="modulo3/index.html" class="tarjeta">
-                    <div class="tarjeta-numero">3</div>
-                    <div class="tarjeta-titulo">Fundamentos de IA</div>
-                    <div class="tarjeta-desc">Redes neuronales, perceptrón, Python científico</div>
-                </a>
-                <!-- Módulo 4 -->
-                <a href="modulo4/index.html" class="tarjeta">
-                    <div class="tarjeta-numero">4</div>
-                    <div class="tarjeta-titulo">Machine Learning</div>
-                    <div class="tarjeta-desc">Regresión, clasificación y proyectos con scikit‑learn</div>
-                </a>
+            <!-- Título principal -->
+            <h1>Cursos de Programación</h1>
+            <p style="font-size:1.3em; margin-bottom:20px;">De principiante a experto en desarrollo e inteligencia
+                artificial</p>
+
+            <!-- Curso 1: Desarrollo Web Full Stack -->
+            <div class="curso-seccion">
+                <h2>Desarrollo Web Full Stack con Python</h2>
+                <div class="modulos">
+                    <a href="mysql/index.html" class="tarjeta">
+                        <span class="numero">1</span>
+                        <span class="titulo">MySQL</span>
+                        <span class="desc">Bases de datos relacionales, consultas, diseño</span>
+                    </a>
+                    <a href="python-basico/index.html" class="tarjeta">
+                        <span class="numero">2</span>
+                        <span class="titulo">Python Básico</span>
+                        <span class="desc">Variables, bucles, funciones y lógica</span>
+                    </a>
+                    <a href="backend/index.html" class="tarjeta">
+                        <span class="numero">3</span>
+                        <span class="titulo">Backend con Python</span>
+                        <span class="desc">APIs, Flask/Django, autenticación</span>
+                    </a>
+                    <a href="frontend/index.html" class="tarjeta">
+                        <span class="numero">4</span>
+                        <span class="titulo">Frontend con React</span>
+                        <span class="desc">Componentes, estado, rutas y hooks</span>
+                    </a>
+                </div>
             </div>
 
-            <p class="autor">Ejecutor Técnico Jorge Rodriguez ✦ Talento Tech</p>
+            <!-- Curso 2: Inteligencia Artificial -->
+            <div class="curso-seccion" style="margin-top:10px;">
+                <h2>Inteligencia Artificial</h2>
+                <div class="modulos">
+                    <a href="python-datos/index.html" class="tarjeta">
+                        <span class="numero">1</span>
+                        <span class="titulo">Python para Datos</span>
+                        <span class="desc">NumPy, Pandas, manejo de datasets</span>
+                    </a>
+                    <a href="fundamentos-ia/index.html" class="tarjeta">
+                        <span class="numero">2</span>
+                        <span class="titulo">Fundamentos de IA</span>
+                        <span class="desc">Redes neuronales, perceptrón, aprendizaje</span>
+                    </a>
+                    <a href="machine-learning/index.html" class="tarjeta">
+                        <span class="numero">3</span>
+                        <span class="titulo">Machine Learning</span>
+                        <span class="desc">Regresión, clasificación y scikit‑learn</span>
+                    </a>
+                </div>
+            </div>
+
+            <p style="color:#d49afe; margin-top:15px;">Ejecutor Técnico Jorge Rodriguez</p>
         </div>
     </div>
 </body>
