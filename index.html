@@ -1,94 +1,197 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Índice de Presentaciones de Python</title>
+    <title>Curso de Programación con IA | Talento Tech</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-         body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-image: url(../images/fondo.jpeg);
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('images/fondo.jpg') no-repeat center center fixed;
             background-size: cover;
-            background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: #0a0a20;
+            /* fallback oscuro */
             height: 100vh;
-            color: #333;
-        }
-        .container {
-            width: 80%;
-            min-height: 80vh;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+            color: #fff;
+        }
+
+        /* Overlay semitransparente para resaltar el contenido */
+        .overlay {
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 40, 0.75);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contenedor-curso {
+            width: 85%;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 30px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(212, 154, 254, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             text-align: center;
+            animation: fadeIn 1s ease;
         }
-        h1, h2 {
-            color: #ff00c3;
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        p {
-            font-size: 1.2em;
-            color: #333;
+
+        .titulo {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff00c3, #d49afe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
         }
-        .nav {
-            margin-top: 20px;
+
+        .subtitulo {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #e0e0ff;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .nav button {
-            padding: 10px 20px;
-            margin: 5px;
-            background-color: #d49afe;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+
+        .modulos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
         }
-        .nav button:hover {
-            background-color: darkmagenta;
-        }
-        .slide {
-            display: none;
-        }
-        .slide.active {
+
+        .tarjeta {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 2rem 1rem;
+            transition: all 0.35s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            color: #fff;
             display: block;
         }
-        pre {
-            background-color: #2e2e2e;
-            color: #00ff08;
-            padding: 10px;
-            border-radius: 8px;
-            white-space: pre-wrap;
-            text-align: left;
-            max-width: 100%;
-            overflow-x: auto;
+
+        .tarjeta:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #d49afe;
+            box-shadow: 0 15px 30px rgba(212, 154, 254, 0.25);
+        }
+
+        .tarjeta-numero {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff00c3, #d49afe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.2rem;
+        }
+
+        .tarjeta-titulo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: #fff;
+        }
+
+        .tarjeta-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            color: #d0d0ff;
+        }
+
+        .autor {
+            margin-top: 2rem;
+            color: #d49afe;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Ajuste para móvil */
+        @media (max-width: 576px) {
+            .contenedor-curso {
+                padding: 2rem 1.5rem;
+            }
+
+            .titulo {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>https://ejecutortecnico.github.io</h1>
-        <h2>Presentaciones Talento Tech</h2>
-        <div class="row">
-            <div class="col">
-            <ul>
-                <li><a href="pr/index.html">Programacion Basico</a></li>
-                <li><a href="pri/index.html">Programacion Intermedio</a></li>
-                <li><a href="ai/index.html">Inteligencia Artificial Basico</a></li>
-                <li><a href="aii/index.html">Inteligencia Artificial Intermedio</a></li>
 
-            </ul>
+<body>
+    <div class="overlay">
+        <div class="contenedor-curso">
+            <h1 class="titulo">Programación con Inteligencia Artificial</h1>
+            <p class="subtitulo">Un viaje desde los fundamentos de Python hasta tus primeros modelos de Machine Learning
+            </p>
+
+            <div class="modulos">
+                <!-- Módulo 1 -->
+                <a href="modulo1/index.html" class="tarjeta">
+                    <div class="tarjeta-numero">1</div>
+                    <div class="tarjeta-titulo">Python Esencial</div>
+                    <div class="tarjeta-desc">Variables, bucles, funciones y lógica de programación</div>
+                </a>
+                <!-- Módulo 2 -->
+                <a href="modulo2/index.html" class="tarjeta">
+                    <div class="tarjeta-numero">2</div>
+                    <div class="tarjeta-titulo">Datos y Algoritmos</div>
+                    <div class="tarjeta-desc">Listas, diccionarios, algoritmos básicos y complejidad</div>
+                </a>
+                <!-- Módulo 3 -->
+                <a href="modulo3/index.html" class="tarjeta">
+                    <div class="tarjeta-numero">3</div>
+                    <div class="tarjeta-titulo">Fundamentos de IA</div>
+                    <div class="tarjeta-desc">Redes neuronales, perceptrón, Python científico</div>
+                </a>
+                <!-- Módulo 4 -->
+                <a href="modulo4/index.html" class="tarjeta">
+                    <div class="tarjeta-numero">4</div>
+                    <div class="tarjeta-titulo">Machine Learning</div>
+                    <div class="tarjeta-desc">Regresión, clasificación y proyectos con scikit‑learn</div>
+                </a>
+            </div>
+
+            <p class="autor">Ejecutor Técnico Jorge Rodriguez ✦ Talento Tech</p>
         </div>
-        </div>
-        <h4 style="color: #d49afe;">Ejecutor Tecnico Jorge Rodriguez</h4>
     </div>
 </body>
+
 </html>
