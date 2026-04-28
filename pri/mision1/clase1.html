@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/estilos.css">
+</head>
+    <body>
+        <div class="container">
+
+          <div class="slide" data-title="Título">
+  <h1>Misión 2 · Lección 1</h1>
+  <h2>Creación y Manipulación de Bases de Datos Relacionales</h2>
+  <h3>Objetivos</h3>
+  <ul>
+    <li>Comprender qué es una base de datos relacional.</li>
+    <li>Diferenciar tablas, claves y relaciones.</li>
+    <li>Conocer qué es un DBMS y sus características principales.</li>
+    <li>Crear y manipular bases de datos y tablas con SQL.</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h2>Datos, Información y Conocimiento</h2>
+  <ul>
+    <li><strong>Datos:</strong> Son hechos brutos, sin contexto ni interpretación.<br>
+      <em>Ejemplo:</em> "23", "Rojo", "2025-09-17".
+    </li>
+    <li><strong>Información:</strong> Son datos organizados y procesados que adquieren un significado.<br>
+      <em>Ejemplo:</em> "La temperatura es 23°C".
+    </li>
+    <li><strong>Conocimiento:</strong> Es la comprensión y uso de la información para tomar decisiones o resolver problemas.<br>
+      <em>Ejemplo:</em> "Con 23°C es una temperatura agradable para salir a caminar".
+    </li>
+  </ul>
+</div>
+
+ <div class="slide" data-title="¿Qué es una BD?">
+    <h2>¿Qué es una Base de Datos Relacional?</h2>
+    <ul>
+      <li>Un sistema para almacenar datos en <strong>tablas</strong> relacionadas entre sí.</li>
+      <li>Se basa en el <em>modelo relacional</em> (filas = tuplas, columnas = atributos).</li>
+      <li>Usa SQL como lenguaje de definición y consulta de datos.</li>
+      <li>Ventajas: consistencia, integridad, consultas potentes, transacciones ACID.</li>
+    </ul>
+    <p class="badge">Ejemplos: PostgreSQL, MySQL, MariaDB, SQLite, SQL Server, Oracle</p>
+  </div>
+
+
+<div class="slide" data-title="¿Qué es una BDR?">
+  <h2>Introducción a las Bases de Datos Relacionales</h2>
+  <p>
+    Una <strong>Base de Datos Relacional (BDR)</strong> organiza la información en <strong>tablas</strong> formadas por filas y columnas.
+    Cada fila es un registro único y cada columna representa un atributo.
+  </p>
+  <ul>
+    <li><strong>Tabla</strong>: colección de datos sobre una entidad (ej: <code>Usuarios</code>).</li>
+    <li><strong>Relación</strong>: vínculo entre tablas (ej: <code>Usuarios</code> y <code>Pedidos</code>).</li>
+    <li><strong>Clave Primaria (PK)</strong>: identificador único por fila.</li>
+    <li><strong>Clave Foránea (FK)</strong>: referencia a la PK de otra tabla.</li>
+    <li><strong>Consulta (Query)</strong>: petición de datos en SQL.</li>
+  </ul>
+  <pre><code>-- Ejemplo de consulta
+SELECT Nombre FROM Usuarios WHERE ID = 1;</code></pre>
+</div>
+
+<div class="slide" data-title="Importancia">
+  <h2>Importancia de las BDR</h2>
+  <ul>
+    <li><strong>Organización:</strong> estructuran grandes volúmenes de datos.</li>
+    <li><strong>Integridad:</strong> aseguran consistencia mediante reglas (PK, FK).</li>
+    <li><strong>Escalabilidad:</strong> soportan desde apps pequeñas hasta grandes sistemas.</li>
+  </ul>
+</div>
+
+<div class="slide" data-title="DBMS">
+  <h2>Sistema de Gestión de Bases de Datos (DBMS)</h2>
+  <p>
+    Un <strong>DBMS</strong> es el software que administra bases de datos, 
+    permitiendo crear, modificar y consultar datos de forma eficiente y segura.
+  </p>
+  <ul>
+    <li><strong>Interfaz de usuario:</strong> herramientas como MySQL Workbench, pgAdmin.</li>
+    <li><strong>Control de acceso:</strong> define permisos para usuarios y roles.</li>
+    <li><strong>Transacciones:</strong> garantizan operaciones atómicas (todo o nada).</li>
+    <li><strong>Integridad de datos:</strong> evita duplicados y datos inválidos.</li>
+    <li><strong>Consultas SQL:</strong> manipulación con <code>SELECT, INSERT, UPDATE, DELETE</code>.</li>
+  </ul>
+</div>
+
+<div class="slide" data-title="Crear BD">
+  <h2>Creación de una Base de Datos</h2>
+  <pre><code>-- Crear una base de datos
+CREATE DATABASE MiBaseDeDatos;
+
+-- Usar la base de datos
+USE MiBaseDeDatos;
+
+-- Crear con configuración (charset/collation)
+CREATE DATABASE MiBaseDeDatos
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
+
+-- Verificar bases de datos existentes
+SHOW DATABASES;</code></pre>
+</div>
+
+<div class="slide" data-title="Crear Tablas">
+  <h2>Creación de Tablas</h2>
+  <p>Las tablas almacenan los datos en filas y columnas, definidas por su estructura.</p>
+  <pre><code>CREATE TABLE Usuarios (
+  ID INT PRIMARY KEY AUTO_INCREMENT,
+  Nombre VARCHAR(100),
+  Correo_Electronico VARCHAR(100) UNIQUE,
+  Fecha_Registro DATE
+);</code></pre>
+  <ul>
+    <li><strong>INT</strong>: enteros.</li>
+    <li><strong>VARCHAR(n)</strong>: texto con longitud definida.</li>
+    <li><strong>DATE</strong>: fechas.</li>
+    <li><strong>BOOLEAN</strong>: valores verdadero/falso.</li>
+  </ul>
+</div>
+
+<div class="slide" data-title="Relaciones">
+  <h2>Relaciones entre Tablas</h2>
+  <pre><code>CREATE TABLE Pedidos (
+  ID INT PRIMARY KEY AUTO_INCREMENT,
+  ID_Usuario INT,
+  Producto VARCHAR(100),
+  Fecha_Pedido DATE,
+  FOREIGN KEY (ID_Usuario) REFERENCES Usuarios(ID)
+);</code></pre>
+  <p>
+    <strong>FK:</strong> asegura que cada pedido siempre esté vinculado a un usuario existente.
+  </p>
+</div>
+
+<div class="slide" data-title="Verificación">
+  <h2>Verificación de Estructuras</h2>
+  <pre><code>-- Revisar estructura de una tabla
+DESCRIBE Usuarios;
+
+-- Verificar todas las tablas de la BD
+SHOW TABLES;</code></pre>
+  <p>
+    Estos comandos permiten validar que las tablas y relaciones se crearon correctamente.
+  </p>
+</div>
+
+<div class="slide" data-title="Ejercicio Guiado">
+  <h2>Ejercicio Guiado 🛠️</h2>
+  <ol>
+    <li>Crea una base de datos llamada <code>Tienda</code>.</li>
+    <li>Dentro de ella, crea la tabla <code>Clientes</code> con: ID, Nombre, Email, FechaRegistro.</li>
+    <li>Crea la tabla <code>Pedidos</code> con: ID, ClienteID, Producto, FechaPedido.</li>
+    <li>Establece <code>ClienteID</code> como clave foránea hacia <code>Clientes(ID)</code>.</li>
+    <li>Verifica las tablas con <code>DESCRIBE</code> y <code>SHOW TABLES</code>.</li>
+  </ol>
+</div>
+
+  <div class="slide" data-title="Ejercicio guiado">
+    <h2>Ejercicio Guiado — Mini Tienda</h2>
+    <ol>
+      <li>Crea tablas: <code>clientes</code>, <code>pedidos</code>, <code>detalle_pedido</code>, <code>productos</code>.</li>
+      <li>Inserta 3 clientes, 4 productos, 2 pedidos con 2 ítems cada uno.</li>
+      <li>Consulta: total gastado por cliente (usa <code>JOIN</code> y <code>GROUP BY</code>).</li>
+      <li>Consulta: los productos sin stock (&lt;= 0).</li>
+    </ol>
+<pre><code>-- Pista de consulta
+SELECT cl.nombre, SUM(dp.cantidad * pr.precio) AS total
+FROM clientes cl
+JOIN pedidos pe ON pe.cliente_id = cl.id
+JOIN detalle_pedido dp ON dp.pedido_id = pe.id
+JOIN productos pr ON pr.id = dp.producto_id
+GROUP BY cl.nombre
+ORDER BY total DESC;</code></pre>
+  </div>
+
+  <div class="slide" data-title="Tarea">
+    <h2>Tarea y Recursos</h2>
+    <ul>
+      <li>Extiende el modelo con <code>proveedores</code> y añade claves foráneas.</li>
+      <li>Escribe 5 consultas con <code>JOIN</code> y 2 con subconsultas.</li>
+      <li>Experimenta con transacciones y bloqueos (dos sesiones de SQL).</li>
+      <li>Opcional: crea vistas para reportes.</li>
+    </ul>
+<pre><code>-- Ejemplo de vista
+CREATE VIEW v_inventario_valorado AS
+SELECT p.id, p.nombre, p.stock, (p.stock * p.precio) AS valor
+FROM productos p;</code></pre>
+    <p class="badge">Próxima clase: Diseño de esquemas y buenas prácticas</p>
+  </div>
+
+
+
+        <div class="nav">
+            <button onclick="prevSlide()">Anterior</button>
+            <button onclick="nextSlide()">Siguiente</button>
+        </div>
+    </div>
+    <script src="../../js/slide.js"></script>
+    </body>
+</html>

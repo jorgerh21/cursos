@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/estilos.css">
+</head>
+    <body>
+        <div class="container">
+            <div class="slide active">
+                <h2>¿Qué son las Bases de Datos?</h2>
+                <p>Una base de datos es un sistema que permite almacenar, organizar y gestionar grandes cantidades de información de manera estructurada.</p>
+                <p>Las bases de datos son esenciales para aplicaciones, sitios web, y sistemas que requieren manejar grandes volúmenes de datos, como información de usuarios, productos, y transacciones.</p>
+              </div>
+            
+              <!-- Diapositiva 2: Tipos de bases de datos -->
+              <div class="slide">
+                <h2>Tipos de Bases de Datos</h2>
+                <ul>
+                  <li><strong>Relacional:</strong> Organiza los datos en tablas con relaciones entre ellas (Ej: MySQL, PostgreSQL).</li>
+                  <li><strong>No Relacional:</strong> Almacena datos de manera más flexible, como documentos JSON (Ej: MongoDB, Cassandra).</li>
+                  <li><strong>Jerárquica:</strong> Organiza los datos en una estructura jerárquica (Ej: IBM DB2).</li>
+                </ul>
+              </div>
+            
+              <!-- Diapositiva 3: Ejemplo de base de datos relacional con MySQL -->
+              <div class="slide">
+                <h2>Ejemplo: Base de Datos Relacional con MySQL</h2>
+                <p>En MySQL, las bases de datos se componen de tablas que almacenan los datos en filas y columnas. Aquí un ejemplo simple:</p>
+                <pre>
+		#llamado en python
+		cursor.execute("create database tienda")
+		#usar sql de phpmyadmin
+                CREATE DATABASE tienda;
+                </pre>
+                <p>En este ejemplo creamos una base de datos llamada `tienda` con una tabla `productos` que tiene tres columnas: id, nombre y precio.</p>
+              </div>
+		
+		<div class="slide">
+                <h2>Ejemplo: Base de Datos Relacional con MySQL</h2>
+                <p>En MySQL, las bases de datos se componen de tablas que almacenan los datos en filas y columnas. Aquí un ejemplo simple:</p>
+                <pre>
+		USE tienda;
+                CREATE TABLE productos (
+                  id INT AUTO_INCREMENT PRIMARY KEY,
+                  nombre VARCHAR(100),
+                  precio DECIMAL(10, 2)
+                );
+                </pre>
+                <p>En este ejemplo creamos una base de datos llamada `tienda` con una tabla `productos` que tiene tres columnas: id, nombre y precio.</p>
+              </div>
+	              <div class="slide">
+                <h2>Ejemplo: Base de Datos Relacional con MySQL</h2>
+                <p>En MySQL, las bases de datos se componen de tablas que almacenan los datos en filas y columnas. Aquí un ejemplo simple:</p>
+                <pre>
+                INSERT INTO productos (nombre, precio)
+                VALUES ('Camiseta', 19.99),
+                       ('Pantalón', 39.99),
+                       ('Zapatos', 59.99);
+                </pre>
+                <p>En este ejemplo creamos una base de datos llamada `tienda` con una tabla `productos` que tiene tres columnas: id, nombre y precio.</p>
+              </div>
+
+		<div class="slide">
+                <h2>Ejemplo: Base de Datos Relacional con MySQL</h2>
+                <p>En MySQL, las bases de datos se componen de tablas que almacenan los datos en filas y columnas. Aquí un ejemplo simple:</p>
+                <pre>
+                SELECT * FROM productos;
+                </pre>
+                <p>En este ejemplo creamos una base de datos llamada `tienda` con una tabla `productos` que tiene tres columnas: id, nombre y precio.</p>
+              </div>
+            
+              <!-- Diapositiva 4: Explicación de las consultas SQL -->
+              <div class="slide">
+                <h2>Consultas SQL en MySQL</h2>
+                <p>Las consultas SQL permiten manipular y consultar los datos almacenados en una base de datos. Ejemplo:</p>
+                <pre>
+                -- Consultar todos los productos
+                SELECT * FROM productos;
+            
+                -- Consultar productos con precio mayor a 30
+                SELECT * FROM productos WHERE precio > 30;
+                </pre>
+                <p>En este caso, usamos `SELECT` para obtener datos, y `WHERE` para aplicar un filtro.</p>
+              </div>
+              <div class="slide">
+                <h1>Relaciones en Bases de Datos</h1>
+                <p>En una base de datos relacional, las relaciones entre tablas son fundamentales para organizar la información de manera eficiente.</p>
+                <p>Existen tres tipos principales de relaciones:</p>
+                <ul>
+                    <li><strong>Uno a Uno</strong>: Cada fila de una tabla se relaciona con una única fila de otra tabla.</li>
+                    <li><strong>Uno a Muchos</strong>: Una fila de una tabla se puede relacionar con varias filas de otra tabla.</li>
+                    <li><strong>Muchos a Muchos</strong>: Varias filas de una tabla se pueden relacionar con varias filas de otra tabla, generalmente usando una tabla intermedia.</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h1>Creación de Relaciones en MySQL</h1>
+                <p>Para crear relaciones entre tablas, se utilizan claves primarias y claves foráneas. La clave primaria asegura la unicidad de cada fila, mientras que la clave foránea conecta dos tablas.</p>
+                <pre>
+                CREATE TABLE clientes (
+                    id_cliente INT PRIMARY KEY,
+                    nombre VARCHAR(100)
+                );
+            
+                CREATE TABLE pedidos (
+                    id_pedido INT PRIMARY KEY,
+                    id_cliente INT,
+                    fecha DATE,
+                    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+                );
+                </pre>
+            </div>
+            
+            <div class="slide">
+                <h1>Introducción a los JOINs</h1>
+                <p>Un <strong>JOIN</strong> se utiliza para combinar filas de dos o más tablas en una base de datos en función de una condición de relación.</p>
+                <p>Existen varios tipos de JOIN:</p>
+                <ul>
+                    <li><strong>INNER JOIN</strong>: Devuelve solo las filas que tienen coincidencias en ambas tablas.</li>
+                    <li><strong>LEFT JOIN</strong>: Devuelve todas las filas de la tabla de la izquierda, junto con las filas coincidentes de la tabla de la derecha.</li>
+                    <li><strong>RIGHT JOIN</strong>: Devuelve todas las filas de la tabla de la derecha, junto con las filas coincidentes de la tabla de la izquierda.</li>
+                    <li><strong>FULL JOIN</strong>: Devuelve filas cuando hay una coincidencia en una de las tablas.</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h1>Ejemplo de INNER JOIN</h1>
+                <p>El siguiente ejemplo muestra cómo combinar las tablas `clientes` y `pedidos` utilizando un <strong>INNER JOIN</strong> para obtener los pedidos realizados por cada cliente:</p>
+                <pre>
+                SELECT clientes.nombre, pedidos.fecha
+                FROM clientes
+                INNER JOIN pedidos ON clientes.id_cliente = pedidos.id_cliente;
+                </pre>
+            </div>
+            
+            <div class="slide">
+                <h1>Ejemplo de LEFT JOIN</h1>
+                <p>El siguiente ejemplo muestra cómo obtener todos los clientes, incluso aquellos que no han realizado pedidos:</p>
+                <pre>
+                SELECT clientes.nombre, pedidos.fecha
+                FROM clientes
+                LEFT JOIN pedidos ON clientes.id_cliente = pedidos.id_cliente;
+                </pre>
+            </div>
+            
+            <div class="slide">
+                <h1>Ejemplo de RIGHT JOIN</h1>
+                <p>En este caso, si existiera una tabla `pagos` con algunos pagos no relacionados a un cliente, se usaría un <strong>RIGHT JOIN</strong> para obtener todos los pagos, aunque no tengan un cliente asociado:</p>
+                <pre>
+                SELECT pagos.monto, clientes.nombre
+                FROM pagos
+                RIGHT JOIN clientes ON pagos.id_cliente = clientes.id_cliente;
+                </pre>
+            </div>
+            
+            <div class="slide">
+                <h1>Conclusión</h1>
+                <p>Las relaciones entre tablas y los JOINs son herramientas poderosas para consultar y combinar datos en bases de datos relacionales.</p>
+                <p>Al comprender cómo usar las claves foráneas y los diferentes tipos de JOIN, podrás estructurar consultas más complejas y útiles para trabajar con bases de datos.</p>
+            </div>
+            
+              <!-- Diapositiva 5: Ventajas de las bases de datos -->
+              <div class="slide">
+                <h2>Ventajas de las Bases de Datos</h2>
+                <ul>
+                  <li><strong>Escalabilidad:</strong> Las bases de datos pueden manejar grandes volúmenes de datos a medida que la aplicación crece.</li>
+                  <li><strong>Integridad:</strong> Permiten garantizar la consistencia y validez de los datos mediante restricciones y reglas.</li>
+                  <li><strong>Accesibilidad:</strong> Facilitan el acceso y la gestión de los datos de forma eficiente y organizada.</li>
+                </ul>
+              </div>
+
+        <div class="nav">
+            <button onclick="prevSlide()">Anterior</button>
+            <button onclick="nextSlide()">Siguiente</button>
+        </div>
+    </div>
+    <script src="../../js/slide.js"></script>
+    </body>
+</html>

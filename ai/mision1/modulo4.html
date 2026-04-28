@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/estilos.css">
+</head>
+    <body>
+        <div class="container">
+
+          <div class="slide">
+  <h1>Módulo 4</h1>
+  <h2>Introducción al Machine Learning</h2>
+  <p>Cómo aprenden las máquinas a partir de datos</p>
+</div>
+
+<div class="slide">
+  <h1>¿Qué es Machine Learning?</h1>
+  <p>Machine Learning es una rama de la IA donde las máquinas aprenden a partir de datos, sin ser programadas con reglas fijas.</p>
+  <p><strong>Idea clave:</strong> más datos + buen algoritmo = mejores predicciones</p>
+</div>
+
+<div class="slide">
+  <h1>Ejemplo sencillo</h1>
+  <ul>
+    <li>Le mostramos muchos correos a la máquina</li>
+    <li>Algunos son "spam" y otros "no spam"</li>
+    <li>La máquina aprende patrones</li>
+    <li>Luego puede clasificar correos nuevos</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Tipos de aprendizaje</h1>
+  <ul>
+    <li><strong>Supervisado:</strong> datos con respuesta conocida</li>
+    <li><strong>No supervisado:</strong> datos sin etiquetas</li>
+    <li><strong>Por refuerzo:</strong> aprender por premios y castigos</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Aprendizaje Supervisado</h1>
+  <p>La máquina aprende con ejemplos que ya tienen respuesta.</p>
+  <ul>
+    <li>Entrada: edad, notas, asistencia</li>
+    <li>Salida: aprobado / reprobado</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Aprendizaje No Supervisado</h1>
+  <p>La máquina busca patrones sin que le demos respuestas.</p>
+  <ul>
+    <li>Agrupar clientes por comportamiento</li>
+    <li>Detectar patrones ocultos</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Conceptos clave en Machine Learning</h1>
+  <ul>
+    <li><strong>Datos (X):</strong> la información de entrada</li>
+    <li><strong>Etiquetas (y):</strong> la respuesta correcta</li>
+    <li><strong>Modelo:</strong> el algoritmo que aprende</li>
+    <li><strong>Entrenar:</strong> enseñar al modelo con datos</li>
+    <li><strong>Predecir:</strong> usar el modelo con datos nuevos</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>¿Qué es un modelo?</h1>
+  <p>Es un programa matemático que encuentra patrones en los datos.</p>
+  <p>Ejemplos de modelos:</p>
+  <ul>
+    <li>Regresión lineal</li>
+    <li>Árboles de decisión</li>
+    <li>Redes neuronales</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Entrenamiento vs Predicción</h1>
+  <ul>
+    <li><strong>Entrenar:</strong> el modelo aprende con ejemplos</li>
+    <li><strong>Predecir:</strong> el modelo responde con datos nuevos</li>
+  </ul>
+  <p>Así como un estudiante primero estudia y luego presenta el examen.</p>
+</div>
+
+<div class="slide">
+  <h1>¿Qué es Scikit-learn?</h1>
+  <p>Es la librería más importante de Machine Learning en Python.</p>
+  <ul>
+    <li>Contiene modelos listos para usar</li>
+    <li>Fácil de aprender</li>
+    <li>Muy usada en la industria</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Primer modelo simple</h1>
+  <p>Ejemplo conceptual con Scikit-learn:</p>
+  <pre>
+from sklearn.linear_model import LinearRegression
+
+modelo = LinearRegression()
+modelo.fit(X, y)
+prediccion = modelo.predict([[5]])
+  </pre>
+</div>
+
+<div class="slide">
+  <h1>Overfitting (sobreajuste)</h1>
+  <p>Ocurre cuando el modelo memoriza los datos en lugar de aprender.</p>
+  <ul>
+    <li>Funciona perfecto con datos conocidos</li>
+    <li>Falla con datos nuevos</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Buena práctica en IA</h1>
+  <ul>
+    <li>Usar datos de entrenamiento</li>
+    <li>Usar datos de prueba</li>
+    <li>Evaluar siempre el modelo</li>
+    <li>No confiarse de un solo resultado</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Actividad práctica</h1>
+  <h2>Reflexión guiada</h2>
+  <ul>
+    <li>Piensa en un problema que tenga datos de entrada</li>
+    <li>¿Qué podría predecir una máquina?</li>
+    <li>Ejemplo: notas → aprobado o no</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Cierre del módulo</h1>
+  <ul>
+    <li>Ahora entiendes cómo aprenden las máquinas</li>
+    <li>Conoces los conceptos fundamentales de ML</li>
+    <li>Estás listo para construir modelos reales</li>
+  </ul>
+  <p><strong>Siguiente módulo:</strong> Modelos Supervisados 📈</p>
+</div>
+
+
+        <div class="nav">
+            <button onclick="prevSlide()">Anterior</button>
+            <button onclick="nextSlide()">Siguiente</button>
+        </div>
+    </div>
+    <script src="../../js/slide.js"></script>
+    </body>
+</html>

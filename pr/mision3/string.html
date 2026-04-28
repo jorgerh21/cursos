@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de Cadenas en Python</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/estilos.css">
+</head>
+<body>
+    <div class="container">
+       
+<div class="slide">
+    <h1>Métodos de Strings en Python</h1>
+    <p>Exploraremos métodos útiles para manipular cadenas de texto.</p>
+</div>
+
+<div class="slide">
+    <h1>1. Método upper()</h1>
+    <p>Convierte todas las letras de un string en mayúsculas.</p>
+    <pre><code>
+texto = "Hola, mundo"
+print(texto.upper())  # "HOLA, MUNDO"
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>2. Método lower()</h1>
+    <p>Convierte todas las letras en minúsculas.</p>
+    <pre><code>
+texto = "Hola, Mundo"
+print(texto.lower())  # "hola, mundo"
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>3. Método strip()</h1>
+    <p>Elimina espacios en blanco al inicio y al final.</p>
+    <pre><code>
+texto = "  Python  "
+print(texto.strip())  # "Python"
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>4. Método replace()</h1>
+    <p>Reemplaza una subcadena por otra.</p>
+    <pre><code>
+texto = "Me gusta Python"
+print(texto.replace("Python", "Java"))  # "Me gusta Java"
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>5. Método split()</h1>
+    <p>Divide un string en una lista usando un separador.</p>
+    <pre><code>
+texto = "manzana,banana,uva"
+print(texto.split(","))  # ['manzana', 'banana', 'uva']
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>6. Método join()</h1>
+    <p>Une los elementos de una lista en un solo string con un separador.</p>
+    <pre><code>
+lista = ["Python", "es", "genial"]
+print(" ".join(lista))  # "Python es genial"
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>7. Método find()</h1>
+    <p>Busca una subcadena y devuelve su índice (o -1 si no la encuentra).</p>
+    <pre><code>
+texto = "Aprender Python"
+print(texto.find("Python"))  # 9
+print(texto.find("Java"))    # -1
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>8. Método count()</h1>
+    <p>Cuenta cuántas veces aparece una subcadena en el texto.</p>
+    <pre><code>
+texto = "banana banana banana"
+print(texto.count("banana"))  # 3
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>9. Método startswith()</h1>
+    <p>Verifica si una cadena comienza con una subcadena específica.</p>
+    <pre><code>
+texto = "Hola, mundo"
+print(texto.startswith("Hola"))  # True
+print(texto.startswith("Mundo"))  # False
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>10. Método endswith()</h1>
+    <p>Verifica si una cadena termina con una subcadena específica.</p>
+    <pre><code>
+texto = "archivo.txt"
+print(texto.endswith(".txt"))  # True
+print(texto.endswith(".jpg"))  # False
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>11. Método isdigit()</h1>
+    <p>Verifica si todos los caracteres de una cadena son dígitos.</p>
+    <pre><code>
+texto = "12345"
+print(texto.isdigit())  # True
+print("123a".isdigit())  # False
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>12. Método isalpha()</h1>
+    <p>Verifica si todos los caracteres de una cadena son letras.</p>
+    <pre><code>
+texto = "Python"
+print(texto.isalpha())  # True
+print("Python3".isalpha())  # False
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>13. Método isalnum()</h1>
+    <p>Verifica si todos los caracteres son letras o números.</p>
+    <pre><code>
+texto = "Python3"
+print(texto.isalnum())  # True
+print("Python 3".isalnum())  # False (espacio no es alfanumérico)
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>14. Método title()</h1>
+    <p>Convierte la primera letra de cada palabra en mayúscula.</p>
+    <pre><code>
+texto = "bienvenidos a python"
+print(texto.title())  # "Bienvenidos A Python"
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>15. Método capitalize()</h1>
+    <p>Convierte solo la primera letra de la cadena en mayúscula.</p>
+    <pre><code>
+texto = "python es genial"
+print(texto.capitalize())  # "Python es genial"
+    </code></pre>
+</div>
+<div class="slide">
+    <h1>Método <code>translate()</code></h1>
+    <p>El método <code>translate()</code> se usa para reemplazar caracteres en una cadena usando una tabla de traducción.</p>
+</div>
+
+<div class="slide">
+    <h1>¿Cómo funciona <code>translate()</code>?</h1>
+    <p>Para usar <code>translate()</code>, primero creamos una tabla con <code>str.maketrans()</code>.</p>
+    <pre><code>
+# Crear una tabla de traducción
+tabla = str.maketrans("aeiou", "12345")
+
+# Aplicar la traducción a una cadena
+texto = "hola amigos"
+nuevo_texto = texto.translate(tabla)
+
+print(nuevo_texto)  # h4l1 1m3g4s
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>Eliminar caracteres con <code>translate()</code></h1>
+    <p>Podemos eliminar caracteres asignándoles <code>None</code> en la tabla de traducción.</p>
+    <pre><code>
+# Crear una tabla de eliminación
+tabla = str.maketrans("", "", "aeiou")
+
+# Aplicar la traducción
+texto = "hola amigos"
+nuevo_texto = texto.translate(tabla)
+
+print(nuevo_texto)  # hl mgs
+    </code></pre>
+</div>	
+<div class="slide">
+    <h1>Eliminar puntuación con <code>translate()</code></h1>
+    <p>Podemos usar <code>translate()</code> para eliminar signos de puntuación en un texto.</p>
+</div>
+
+<div class="slide">
+    <h1>Ejemplo: Eliminar puntuación</h1>
+    <p>Usamos <code>str.maketrans()</code> pasando un diccionario vacío y los caracteres a eliminar.</p>
+    <pre><code>
+import string
+
+# Crear una tabla para eliminar puntuación
+tabla = str.maketrans("", "", string.punctuation)
+
+# Texto con puntuación
+texto = "¡Hola! ¿Cómo estás?"
+
+# Aplicar la traducción
+texto_limpio = texto.translate(tabla)
+
+print(texto_limpio)  # Hola Como estas
+    </code></pre>
+</div>
+
+<div class="slide">
+    <h1>¿Cómo funciona?</h1>
+    <ul>
+        <li><code>string.punctuation</code> contiene todos los signos de puntuación.</li>
+        <li>Pasamos una tabla vacía para no reemplazar nada.</li>
+        <li>Los caracteres en <code>string.punctuation</code> se eliminan.</li>
+    </ul>
+</div>	    
+        <div class="nav">
+            <button onclick="plusSlides(-1)">&#10094; Anterior</button>
+            <button onclick="plusSlides(1)">Siguiente &#10095;</button>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar código -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <pre id="code"></pre>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlide(n) {
+            const slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[n].style.display = "flex";  
+        }
+
+        function plusSlides(n) {
+            slideIndex += n;
+            if (slideIndex >= document.getElementsByClassName("slide").length) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = document.getElementsByClassName("slide").length - 1;
+            }
+            showSlide(slideIndex);
+        }
+
+        function openModal(example) {
+            const modal = document.getElementById("myModal");
+            const codeElement = document.getElementById("code");
+            const codeExamples = {
+                upper: `'texto'.upper()  # 'TEXTO'`,
+                lower: `'TEXTO'.lower()  # 'texto'`,
+                strip: `  '   texto   '.strip()  # 'texto'`,
+                replace: `'Hola, mundo'.replace('mundo', 'Python')  # 'Hola, Python'`,
+                split: `'uno, dos, tres'.split(',')  # ['uno', ' dos', ' tres']`
+            };
+
+            codeElement.textContent = codeExamples[example];
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        showSlide(slideIndex);
+    </script>
+</body>
+</html>

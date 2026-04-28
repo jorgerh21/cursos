@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/estilos.css">
+</head>
+    <body>
+        <div class="container">
+                <div class="slide" data-title="Título">
+  <h1>Misión 3 · Lección 8</h1>
+  <h2>Blueprints y Estructuración de Proyectos en Flask</h2>
+  <h3>Objetivos</h3>
+  <ul>
+    <li>Comprender el concepto de Blueprints en Flask.</li>
+    <li>Organizar el proyecto en módulos reutilizables.</li>
+    <li>Aplicar buenas prácticas de estructuración.</li>
+  </ul>
+</div>
+
+<div class="slide" data-title="Qué son Blueprints">
+  <h2>¿Qué son los Blueprints?</h2>
+  <p>Son una forma de organizar la aplicación en módulos independientes.</p>
+  <ul>
+    <li>Permiten separar rutas por funcionalidad.</li>
+    <li>Facilitan el mantenimiento y la escalabilidad.</li>
+    <li>Ejemplo: módulo de usuarios, módulo de productos.</li>
+  </ul>
+</div>
+
+<div class="slide" data-title="Estructura proyecto">
+  <h2>Estructura básica de proyecto</h2>
+<pre><code>mi_app/
+│── app.py
+│── /templates
+│── /static
+│── /usuarios
+│    ├── __init__.py
+│    ├── rutas.py
+│── /productos
+     ├── __init__.py
+     ├── rutas.py</code></pre>
+</div>
+
+<div class="slide" data-title="Definir blueprint">
+  <h2>Definir un Blueprint</h2>
+<pre><code>from flask import Blueprint
+
+usuarios_bp = Blueprint("usuarios", __name__)
+
+@usuarios_bp.route("/usuarios")
+def lista_usuarios():
+    return "Listado de usuarios"</code></pre>
+</div>
+
+<div class="slide" data-title="Registrar blueprint">
+  <h2>Registrar un Blueprint</h2>
+<pre><code>from usuarios.rutas import usuarios_bp
+
+app.register_blueprint(usuarios_bp)</code></pre>
+</div>
+
+<div class="slide" data-title="Blueprint con prefijo">
+  <h2>Blueprint con prefijo</h2>
+<pre><code>app.register_blueprint(usuarios_bp, url_prefix="/api")</code></pre>
+  <p>Ahora la ruta sería <code>/api/usuarios</code>.</p>
+</div>
+
+<div class="slide" data-title="Separar templates">
+  <h2>Separar Templates</h2>
+<pre><code>@usuarios_bp.route("/perfil")
+def perfil():
+    return render_template("usuarios/perfil.html")</code></pre>
+  <p>Los templates pueden organizarse en carpetas por módulo.</p>
+</div>
+
+<div class="slide" data-title="Buenas prácticas">
+  <h2>Buenas Prácticas</h2>
+  <ul>
+    <li>Separar funcionalidades en módulos lógicos.</li>
+    <li>Usar prefijos para evitar colisiones de rutas.</li>
+    <li>Mantener los blueprints pequeños y específicos.</li>
+  </ul>
+</div>
+
+<div class="slide" data-title="Ejemplo completo">
+  <h2>Ejemplo completo</h2>
+<pre><code># usuarios/rutas.py
+from flask import Blueprint
+usuarios_bp = Blueprint("usuarios", __name__)
+
+@usuarios_bp.route("/login")
+def login():
+    return "Página de login"
+
+# app.py
+from flask import Flask
+from usuarios.rutas import usuarios_bp
+
+app = Flask(__name__)
+app.register_blueprint(usuarios_bp, url_prefix="/usuarios")</code></pre>
+</div>
+
+<div class="slide" data-title="Ejercicio">
+  <h2>Ejercicio Guiado</h2>
+  <ol>
+    <li>Crea un módulo <code>usuarios</code> con un blueprint y una ruta <code>/login</code>.</li>
+    <li>Regístralo en la app principal con prefijo <code>/usuarios</code>.</li>
+    <li>Crea otro módulo <code>productos</code> con una ruta <code>/lista</code>.</li>
+    <li>Organiza los templates en carpetas por módulo.</li>
+  </ol>
+</div>
+
+
+        <div class="nav">
+            <button onclick="prevSlide()">Anterior</button>
+            <button onclick="nextSlide()">Siguiente</button>
+        </div>
+    </div>
+    <script src="../../js/slide.js"></script>
+    </body>
+</html>

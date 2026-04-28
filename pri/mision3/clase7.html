@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/estilos.css">
+</head>
+    <body>
+        <div class="container">
+    
+            <div class="slide" data-title="Introducción">
+  <h1>Misión 1 · Lección 7</h1>
+  <h2>Integración, Pruebas e Implementación en React</h2>
+  <h3>Objetivos</h3>
+  <ul>
+    <li>Integrar componentes en una aplicación completa.</li>
+    <li>Aprender a realizar pruebas básicas con React Testing Library.</li>
+    <li>Optimizar la aplicación para producción.</li>
+    <li>Implementar la app en un servicio de despliegue (ej. Vercel o Netlify).</li>
+  </ul>
+</div>
+
+<div class="slide" data-title="Estructura del Proyecto">
+  <h2>Estructura del Proyecto</h2>
+  <ul>
+    <li><code>src/components/</code> — componentes reutilizables.</li>
+    <li><code>src/App.jsx</code> — lógica principal y composición.</li>
+    <li><code>src/context/</code> — estado global (opcional).</li>
+    <li><code>tests/</code> — pruebas unitarias y de integración.</li>
+  </ul>
+</div>
+
+<div class="slide" data-title="Integración de Componentes">
+  <h2>Integración de Componentes</h2>
+<pre><code>// App.jsx
+import Header from "./components/Header";
+import TaskForm from "./components/TaskForm";
+import TaskList from "./components/TaskList";
+
+export default function App() {
+  return (
+    &lt;div&gt;
+      &lt;Header /&gt;
+      &lt;TaskForm /&gt;
+      &lt;TaskList /&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+  <p>El componente <code>App</code> orquesta toda la aplicación.</p>
+</div>
+
+<div class="slide" data-title="Pruebas con React Testing Library">
+  <h2>Pruebas con React Testing Library</h2>
+  <p>Ejemplo de prueba unitaria de un componente:</p>
+<pre><code>// tests/Header.test.jsx
+import { render, screen } from "@testing-library/react";
+import Header from "../src/components/Header";
+
+test("renderiza el título", () =&gt; {
+  render(&lt;Header /&gt;);
+  expect(screen.getByText("Lista de Tareas")).toBeInTheDocument();
+});
+</code></pre>
+</div>
+
+<div class="slide" data-title="Pruebas de interacción">
+  <h2>Pruebas de interacción</h2>
+<pre><code>// tests/TaskForm.test.jsx
+import { render, screen, fireEvent } from "@testing-library/react";
+import TaskForm from "../src/components/TaskForm";
+
+test("agrega una nueva tarea", () =&gt; {
+  render(&lt;TaskForm onAgregarTarea={() =&gt; {}} /&gt;);
+  const input = screen.getByPlaceholderText("Nueva tarea...");
+  fireEvent.change(input, { target: { value: "Estudiar React" } });
+  fireEvent.submit(input.closest("form"));
+  expect(input.value).toBe(""); // se limpia el campo
+});
+</code></pre>
+</div>
+
+<div class="slide" data-title="Optimización para Producción">
+  <h2>Optimización para Producción</h2>
+  <ul>
+    <li><code>npm run build</code> genera la versión optimizada.</li>
+    <li>Se minifican y optimizan los archivos.</li>
+    <li>El resultado está en la carpeta <code>dist/</code>.</li>
+    <li>Puede desplegarse en cualquier hosting estático.</li>
+  </ul>
+</div>
+
+<div class="slide" data-title="Despliegue en Vercel">
+  <h2>Despliegue en Vercel</h2>
+  <ol>
+    <li>Instalar CLI: <code>npm i -g vercel</code>.</li>
+    <li>Ejecutar <code>vercel</code> en el proyecto.</li>
+    <li>Seguir las instrucciones (conectar cuenta y elegir proyecto).</li>
+    <li>Tu aplicación quedará en línea con una URL pública.</li>
+  </ol>
+</div>
+
+<div class="slide" data-title="Buenas prácticas">
+  <h2>Buenas Prácticas</h2>
+  <ul>
+    <li>Separar lógica en componentes pequeños y reutilizables.</li>
+    <li>Escribir pruebas unitarias para componentes clave.</li>
+    <li>Usar <code>useMemo</code> y <code>React.memo</code> en listas grandes.</li>
+    <li>Configurar un repositorio Git y CI/CD (ej. GitHub Actions).</li>
+  </ul>
+</div>
+
+<div class="slide" data-title="Ejercicio">
+  <h2>Ejercicio Guiado 🛠️</h2>
+  <ol>
+    <li>Integra tus componentes (<code>Header</code>, <code>TaskForm</code>, <code>TaskList</code>) en <code>App.jsx</code>.</li>
+    <li>Escribe al menos una prueba unitaria y una de interacción con Testing Library.</li>
+    <li>Ejecuta <code>npm run build</code> y despliega tu app en Vercel o Netlify.</li>
+  </ol>
+</div>
+
+
+        <div class="nav">
+            <button onclick="prevSlide()">Anterior</button>
+            <button onclick="nextSlide()">Siguiente</button>
+        </div>
+    </div>
+    <script src="../../js/slide.js"></script>
+    </body>
+</html>
