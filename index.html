@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos de Programación · Clases Personalizadas</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
     <div class="container">
         <div class="slide active">
@@ -71,7 +73,8 @@
                 </div>
             </div>
 
-            <p class="instructor">Instructor: <a href="https://sitioz.com/jorge" target="_blank" rel="noopener noreferrer">Jorge Rodriguez</a></p>
+            <p class="instructor">Instructor: <a href="https://sitioz.com/jorge" target="_blank"
+                    rel="noopener noreferrer">Jorge Rodriguez</a></p>
             <div class="boton-wa">
                 <a href="https://wa.me/573133275812?text=Hola%20Jorge%2C%20me%20interesan%20tus%20clases%20de%20programación"
                     target="_blank" class="btn-wa">
@@ -84,7 +87,7 @@
     <script>
         // Para móviles: toggle con clic en la tarjeta, cerrar con X
         document.querySelectorAll('.tarjeta-curso').forEach(tarjeta => {
-            tarjeta.addEventListener('click', function(e) {
+            tarjeta.addEventListener('click', function (e) {
                 if (e.target.tagName === 'A' || e.target.classList.contains('modal-cerrar')) return;
                 if (window.innerWidth <= 768) {
                     const wrapper = this.closest('.curso-wrapper');
@@ -93,12 +96,24 @@
             });
         });
         document.querySelectorAll('.modal-cerrar').forEach(boton => {
-            boton.addEventListener('click', function(e) {
+            boton.addEventListener('click', function (e) {
                 e.stopPropagation();
                 const wrapper = this.closest('.curso-wrapper');
                 wrapper.classList.remove('modal-abierto');
             });
         });
     </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1001567483">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-1001567483');
+    </script>
 </body>
+
 </html>
