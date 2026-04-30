@@ -369,11 +369,15 @@ h1 {
     color: #00e5ff;
 }
 
-/* ===== BOTÓN FLOTANTE WHATSAPP (MEJORADO) ===== */
+/* ===== BOTÓN FLOTANTE WHATSAPP - Posición al 25% de la ventana ===== */
 .btn-wa-flotante {
     position: fixed;
-    bottom: 25px;
+    top: 25%;
+    /* 25% desde el borde superior */
+    transform: translateY(-50%);
+    /* centra el botón en ese punto */
     right: 25px;
+    /* separación derecha (ajústala si quieres) */
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -384,7 +388,7 @@ h1 {
     justify-content: center;
     z-index: 9998;
     transition: transform 0.3s, box-shadow 0.3s;
-    overflow: visible; /* permite que el anillo sea visible fuera */
+    overflow: visible;
     animation: pulseWA 2s infinite;
 }
 
@@ -411,7 +415,7 @@ h1 {
     right: -4px;
     bottom: -4px;
     border-radius: 50%;
-    background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.6), transparent);
+    background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.6), transparent);
     animation: rotateGlow 3s linear infinite;
     z-index: -1;
 }
@@ -422,12 +426,12 @@ h1 {
     height: 65%;
     object-fit: contain;
     z-index: 1;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-/* Efecto hover */
+/* Efecto hover: mantiene el centrado vertical y agrega escala */
 .btn-wa-flotante:hover {
-    transform: scale(1.15);
+    transform: translateY(-50%) scale(1.15);
     box-shadow: 0 6px 30px rgba(37, 211, 102, 0.9);
 }
 
@@ -436,9 +440,11 @@ h1 {
     0% {
         box-shadow: 0 4px 25px rgba(37, 211, 102, 0.6);
     }
+
     50% {
         box-shadow: 0 4px 40px rgba(37, 211, 102, 0.9), 0 0 60px rgba(37, 211, 102, 0.3);
     }
+
     100% {
         box-shadow: 0 4px 25px rgba(37, 211, 102, 0.6);
     }
@@ -450,6 +456,7 @@ h1 {
         transform: scale(1);
         opacity: 1;
     }
+
     100% {
         transform: scale(1.5);
         opacity: 0;
@@ -461,12 +468,13 @@ h1 {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
 }
 
-/* ===== OCULTAR NO USADOS ===== */
+/* ===== OCULTAR NO USADOS (opcional, según tu sitio) ===== */
 .nav,
 .modal,
 pre,
